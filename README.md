@@ -1,1 +1,31 @@
-# opencart-belero-4.0.2.2
+
+# BELERO - Fashion Responsive Opencart 4 Theme
+
+
+![Logo](https://www.erolislen.com.tr/opencart/image-banner.jpg)
+
+
+## Features
+
+- The theme has been made 100% mobile compatible.
+- A design arrangement has been provided in the header section.
+- Mobile menu arrangement has been made.
+- The slider structure was recreated with the swiper library.
+- 2 new banner structures were established.
+- Design arrangements were made in the product box sections.
+- Discount rate has been added for discounted products, bestsellers, latest products and Featured sections.
+- The feature of adding two labels to the products has been brought.
+- The feature of adding youtube videos to the products has been brought.
+- Design editing was provided in the Category module.
+- The My Account page has been edited.
+- A countdown timer has been added to the products.
+- Whatsapp order module has been added.
+- Design editing was provided on the product detail page.
+- In the panel for Google Analytics, Google Tag Manager, Facebook Pixel and Yandex Metrica integrations fields have been added.
+- An area has been created for adding social media accounts within the panel.
+- The content of the maintenance mode page has been made to be edited via the admin panel.
+
+
+## Demo
+
+https://opencart.belerosoft.com
