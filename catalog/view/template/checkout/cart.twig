@@ -28,9 +28,9 @@
         </div>
       {% endif %}
       <br/>
-      <div class="d-inline-block w-100">
-        <div class="float-start"><a href="{{ continue }}" class="btn btn-light">{{ button_shopping }}</a></div>
-        <div class="float-end"><a href="{{ checkout }}" class="btn btn-primary">{{ button_checkout }}</a></div>
+      <div class="row">
+        <div class="col"><a href="{{ continue }}" class="btn btn-light">{{ button_shopping }}</a></div>
+        <div class="col text-end"><a href="{{ checkout }}" class="btn btn-primary">{{ button_checkout }}</a></div>
       </div>
       {{ content_bottom }}</div>
     {{ column_right }}</div>
@@ -66,14 +66,11 @@ $('#shopping-cart').on('submit', 'form', function (e) {
             }
 
             if (json['error']) {
-            //    $('#alert').prepend('<div class="alert alert-danger alert-dismissible"><i class="fa-solid fa-circle-exclamation"></i> ' + json['error'] + ' <button type="button" class="btn-close" data-bs-dismiss="alert"></button></div>');
-            Swal.fire({icon: "error",toast:true,timer:3000,title: json["error"],showConfirmButton: false,showCloseButton: true,position: "top-end",});
+                $('#alert').prepend('<div class="alert alert-danger alert-dismissible"><i class="fa-solid fa-circle-exclamation"></i> ' + json['error'] + ' <button type="button" class="btn-close" data-bs-dismiss="alert"></button></div>');
             }
 
             if (json['success']) {
-                //$('#alert').prepend('<div class="alert alert-success alert-dismissible"><i class="fa-solid fa-circle-exclamation"></i> ' + json['success'] + ' <button type="button" class="btn-close" data-bs-dismiss="alert"></button></div>');
-                 Swal.fire({icon: "success",toast:true,timer:3000,title: json["success"],showConfirmButton: false,showCloseButton: true,position: "top-end",});
-
+                $('#alert').prepend('<div class="alert alert-success alert-dismissible"><i class="fa-solid fa-circle-exclamation"></i> ' + json['success'] + ' <button type="button" class="btn-close" data-bs-dismiss="alert"></button></div>');
             }
 
             $('#shopping-cart').load('index.php?route=checkout/cart.list&language={{ language }}', {}, function () {
