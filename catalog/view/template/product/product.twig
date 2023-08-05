@@ -9,8 +9,8 @@
     <div id="content" class="col">
       {{ content_top }}
       <div class="row mb-3">
-        <div class="col-sm">
-          {% if thumb or images %}
+        {% if thumb or images %}
+          <div class="col-sm">
             <div class="image magnific-popup">
               {% if thumb %}
                 <a href="{{ popup }}" title="{{ heading_title }}"><img src="{{ thumb }}" title="{{ heading_title }}" alt="{{ heading_title }}" class="img-thumbnail mb-3"/></a>
@@ -23,8 +23,8 @@
                 </div>
               {% endif %}
             </div>
-          {% endif %}
-        </div>
+         </div>
+        {% endif %}
         <div class="col-sm prd-desc-div">
           <h1>{{ heading_title }}</h1>
 		  
@@ -319,7 +319,9 @@
                   </div>
                 {% endif %}
                 <div class="mb-3">
-                  <label for="input-quantity" class="form-label">{{ entry_qty }}</label> <input type="text" name="quantity" value="{{ minimum }}" size="2" id="input-quantity" class="form-control"/> <input type="hidden" name="product_id" value="{{ product_id }}" id="input-product-id"/>
+                  <label for="input-quantity" class="form-label">{{ entry_qty }}</label>
+                  <input type="text" name="quantity" value="{{ minimum }}" size="2" id="input-quantity" class="form-control"/>
+                  <input type="hidden" name="product_id" value="{{ product_id }}" id="input-product-id"/>
                   <div id="error-quantity" class="form-text"></div>
                   <br/>
 				  
@@ -417,7 +419,7 @@
     {{ column_right }}</div>
 </div>
 <script type="text/javascript"><!--
-$('#input-subscription').on('change', function (e) {
+$('#input-subscription').on('change', function(e) {
     var element = this;
 
     $('.subscription').addClass('d-none');
@@ -445,7 +447,7 @@ function makeTimer() {
     }  
     setInterval(function() { makeTimer(); }, 1000);  
 
-$('#form-product').on('submit', function (e) {
+$('#form-product').on('submit', function(e) {
     e.preventDefault();
 
     $.ajax({
@@ -456,13 +458,13 @@ $('#form-product').on('submit', function (e) {
         contentType: 'application/x-www-form-urlencoded',
         cache: false,
         processData: false,
-        beforeSend: function () {
+        beforeSend: function() {
             $('#button-cart').prop('disabled', true).addClass('loading');
         },
-        complete: function () {
+        complete: function() {
             $('#button-cart').prop('disabled', false).removeClass('loading');
         },
-        success: function (json) {
+        success: function(json) {
             $('#form-product').find('.is-invalid').removeClass('is-invalid');
             $('#form-product').find('.invalid-feedback').removeClass('d-block');
 
@@ -481,13 +483,13 @@ $('#form-product').on('submit', function (e) {
                 $('#header-cart').load('index.php?route=common/cart|info');
             }
         },
-        error: function (xhr, ajaxOptions, thrownError) {
+        error: function(xhr, ajaxOptions, thrownError) {
             console.log(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
         }
     });
 });
 
-$(document).ready(function () {
+$(document).ready(function() {
     $('.magnific-popup').magnificPopup({
         type: 'image',
         delegate: 'a',

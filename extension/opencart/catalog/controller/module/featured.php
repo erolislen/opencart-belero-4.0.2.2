@@ -1,6 +1,6 @@
 <?php
 namespace Opencart\Catalog\Controller\Extension\Opencart\Module;
-use \Opencart\System\Helper AS Helper;
+
 class Featured extends \Opencart\System\Engine\Controller {
 	public function index(array $setting): string {
 		$this->load->language('extension/opencart/module/featured');
@@ -14,7 +14,7 @@ class Featured extends \Opencart\System\Engine\Controller {
 
 		if (!empty($setting['product'])) {
 			$products = [];
-			$product_data = [];
+
 
 			foreach ($setting['product'] as $product_id) {
 				$product_info = $this->model_catalog_product->getProduct($product_id);
@@ -59,7 +59,7 @@ class Featured extends \Opencart\System\Engine\Controller {
 					'product_id'  => $product['product_id'],
 					'thumb'       => $image,
 					'name'        => $product['name'],
-					'description' => oc_substr(strip_tags(html_entity_decode($product['description'], ENT_QUOTES, 'UTF-8')), 0, $this->config->get('config_product_description_length')) . '..',
+					'description' => oc_substr(trim(strip_tags(html_entity_decode($product['description'], ENT_QUOTES, 'UTF-8'))), 0, $this->config->get('config_product_description_length')) . '..',
 					'price'       => $price,
 					'special'     => $special,
 					'label_1'     => $product['label_1'],
