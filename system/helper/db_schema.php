@@ -4788,6 +4788,16 @@ function oc_db_schema() {
 				'not_null' => true
 			],
 			[
+				'name' => 'label_1',
+				'type' => 'varchar(64)',
+				'not_null' => true
+			],
+			[
+				'name' => 'label_2',
+				'type' => 'varchar(64)',
+				'not_null' => true
+			],
+			[
 				'name' => 'variant',
 				'type' => 'text',
 				'not_null' => true,
@@ -5051,6 +5061,11 @@ function oc_db_schema() {
 			[
 				'name' => 'meta_description',
 				'type' => 'varchar(255)',
+				'not_null' => true
+			],
+			[
+				'name' => 'youtube_link',
+				'type' => 'varchar(128)',
 				'not_null' => true
 			],
 			[

@@ -88,7 +88,7 @@ footer a {font-size: 1.1em;text-decoration: none;}
 
 /* logo */
 #logo {margin: 0 0 10px 0;}
-#logo img {max-width: 200px;filter: brightness(0%);}
+#logo img {max-width: 200px;}
 
 /* search */
 #search {margin-bottom: 10px;}
