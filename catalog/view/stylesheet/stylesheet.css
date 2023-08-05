@@ -119,7 +119,8 @@ footer a {font-size: 1.1em;text-decoration: none;}
 #header-cart .dropdown-menu li p a:last-child{border:1px solid #189d0e;background:#189d0e;}
 
 @media (max-width: 478px) {
-  #header-cart .dropdown-menu {width: 100%;}
+  #header-cart .dropdown-menu {width: 400px !important;}
+  #header-cart .dropdown-menu li {min-width: 350px;}
   #header-cart .dropdown-menu li > div {min-width: 100%;}
 }
 
@@ -440,6 +441,7 @@ footer h5 {font-family: 'Quicksand', sans-serif;font-size: 15px;font-weight: bol
 
 
 /* product list */
+.prd-card{position:relative;}
 .price {color: #000; font-size:16px}
 .price-new {font-weight: 600;  background-color: #76346d;padding:1px 7px;font-size: 16px;color: #fff;}
 .price-old {color: #444;text-decoration: line-through; font-size:14px; padding-left: 20px;font-weight:700;}
@@ -456,8 +458,7 @@ footer h5 {font-family: 'Quicksand', sans-serif;font-size: 15px;font-weight: bol
     font-weight: 600;font-size:15px;text-shadow:1px 0px 1px #1e1e1e;border-radius: 50%;box-shadow:0px 1px 5px #444}
 .product-buttons .addwishlist{position:absolute;top:10px;right:10px;font-size:20px;}
 .product-thumb .content .description .short-desc{display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;overflow: hidden;}
-.prd-cart .product-buttons{opacity: 0;transition: all 0.4s ease 0s;visibility: hidden;position:absolute;bottom:0px;width:96%;left:2%;}
-.prd-cart:hover .product-buttons{opacity: 1;visibility: visible;z-index: 9999;bottom:40%;}
+.prd-card .product-buttons{position:absolute;bottom:0px;width:100%;}
 
 
 /*product page*/
@@ -805,8 +806,8 @@ footer h5 {font-family: 'Quicksand', sans-serif;font-size: 15px;font-weight: bol
 	.col-sm-6{width:50% !important;}
 	.short-desc{display:none;}
 	.description h4 a{min-height:40px;display:block;}
-	.price-old{padding-left:0;}
-	.btn-cart{padding:2px !important;}
+	.price-old{padding-left:5px;font-size:12px;}
+	.btn-cart{padding:2px !important;border-radius: 0px 0px 12px 12px;}
 	.rating .fa-stack {width: 12px;}
 	.rating .fa-star{font-size:12px;}
 	.product-thumb h4{font-size:14px;}
@@ -814,6 +815,8 @@ footer h5 {font-family: 'Quicksand', sans-serif;font-size: 15px;font-weight: bol
 	.product-thumb .image{margin-bottom:0px;}
 	.product-thumb .discount{top:90px;}
 	.product-thumb .addwishlist i{font-size:18px;}
+	.product-thumb .price-new{font-size:13px;}
+	.prd-prices .price-new{font-size:20px;}
 	.hidden-xs{display:none !important;}
 	.modTitle{font-size:30px;}
 	.title-divider{margin-bottom:20px;}
@@ -850,6 +853,8 @@ footer h5 {font-family: 'Quicksand', sans-serif;font-size: 15px;font-weight: bol
 	.featured-slide .swiper-wrapper, .latest-slide .swiper-wrapper{margin-top:10px;}
 	.featured-slide, .latest-slide{padding:5px 15px !important;}
 	.hidden-lg{display:none !important;}
+	.prd-card .product-buttons{opacity: 0;transition: all 0.4s ease 0s;visibility: hidden;width:96%;left:2%;}
+	.prd-card:hover .product-buttons{opacity: 1;visibility: visible;z-index: 9999;bottom:40%;}
 }
 
 .label{font-weight: 400;font-size: 12px;height: 24px;line-height: 24px;color: #fff;left: 10px;position: absolute;right: auto;border-radius: 0;min-width: 50px;padding: 0 8px 0 8px;}
